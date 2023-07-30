@@ -27,15 +27,16 @@ Product* chooseProduct(){
     string choice;
     cin >> choice;
 
-    for(auto pd : allProducts)
-        if(pd.getShortName() == choice)
-            return &pd;
+    for(int i=0; i<allProducts.size(); i++)
+        if(allProducts[i].getShortName() == choice)
+            return &(allProducts[i]);
 
     cout << "Product not found!" << endl;
     return NULL;
 }
 
-bool checkout(Cart &cart){
+bool checkout(Cart &cart)
+{
     if(cart.isEmpty()){
         cout << "Cart is empty!" << endl;
         return false;
@@ -73,11 +74,10 @@ int main(){
        }
        else if(action == 'v'){
         cout << "......................" << endl;
-        cart.viewCart();
+        cout << cart.viewCart() << endl;
         cout << "......................" << endl;
        }
        else{
-            cart.viewCart();
             if(checkout(cart))
                 break;
        }
