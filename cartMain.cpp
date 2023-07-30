@@ -63,7 +63,7 @@ int main(){
     char action;
     Cart cart;
     while(true){
-       cout << "Choose action: (a)dd item,  (v)iew cart,  (c)heckout" << endl;
+       cout << "Choose action: (a)dd item,  (v)iew cart,  (c)heckout,  (e)xit" << endl;
        cin >> action;
        if(action == 'a'){
             Product* pd = chooseProduct();
@@ -76,6 +76,9 @@ int main(){
         cout << "......................" << endl;
         cout << cart.viewCart() << endl;
         cout << "......................" << endl;
+       }
+       else if(action == 'e'){
+           break;
        }
        else{
             if(checkout(cart))
