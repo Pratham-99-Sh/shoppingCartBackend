@@ -21,7 +21,7 @@ class Product{
     }
 
     string getDisplayName(){
-        return name + " : Rs. " + to_string(price);
+        return name + " : Rs. " + to_string(price) + "\n";
     }
 
     string getShortName(){
